@@ -1,0 +1,51 @@
+.swiper-navigation {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+
+  &__button {
+    background-color: black;
+    border-radius: 8px;
+    height: 40px;
+    width: 100px;
+    transition: opacity .3s;
+    transition: background-color .3s;
+    font-size: 0;
+    line-height: 0;
+
+    position: relative;
+
+    &:hover {
+      background-color: white;
+    
+      .navigation {
+        fill: black;
+      }
+    }
+
+    &::before {
+      width: 30px;
+      height: 15px;
+      display: block;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+
+.navigation {
+  fill: white;
+  width: 20px;
+  height: 20px;
+  transition: fill .3s;
+}
