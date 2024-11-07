@@ -81,5 +81,3 @@ Create a new superhero: Using the form on the frontend, you can add new superher
 Edit a superhero: You can change the properties of existing superheroes.
 Upload images: You can upload and replace images for each superhero.
 Delete a superhero: Delete a superhero from the database.
-
-Translated with DeepL.com (free version)
