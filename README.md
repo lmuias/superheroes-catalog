@@ -1,50 +1,87 @@
-# React + TypeScript + Vite
+**SuperheroCatalog**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SuperheroCatalog is a web application for managing a superhero catalog. Users can browse existing superheroes, create new ones, edit existing ones, as well as upload, replace, and delete superhero images. All data is stored in a PostgreSQL database, which ensures the safety of information about superheroes.
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is built using the following technologies:
 
-## Expanding the ESLint configuration
+- **Vite** is a fast builder for React applications that provides instant page refreshing using HMR (Hot Module Replacement).
+- React is a popular library for building interfaces.
+- TypeScript** is a superlayer for JavaScript that adds typing and helps to avoid many errors at the compilation stage.
+- Node.js + Express** - for building the server side of the application.
+- PostgreSQL is a relational database for storing information about superheroes.
+- Sass is a CSS preprocessor that allows you to write more convenient styles.
+- ESLint - for checking the quality of the code.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Functionality
 
-- Configure the top-level `parserOptions` property like this:
+- Viewing superheroes stored in the database.
+- Create new superheroes with the ability to add images.
+- Editing existing superheroes.
+- Upload, delete, and replace superhero images.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Steps to get started.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 1. Clone the repository
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+First, clone the repository:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+git clone https://github.com/your-username/hero-catalog.git
+cd superhero-catalog
+code superhero-catalog
+
+To run this project on your computer, follow these steps:
+
+### 1. Setting up and running the backend
+
+1. Change to the `backend` folder:
+
+   cd ./backend
+
+2. Install the dependencies
+
+npm install
+
+Install the dependencies for the backend:
+
+npm install
+Set up the PostgreSQL database:
+
+Install PostgreSQL on your computer. To do this, you can use the official link: Download PostgreSQL.
+
+Create a database for the project:
+
+psql -U postgres
+CREATE DATABASE hero_catalog;
+Install all the necessary tables and data. If you have a SQL dump with the database, you can load it with:
+
+psql -U postgres -d hero_catalog < full_backup.sql
+Create an .env file in the backend folder and add the parameters to connect to the database:
+
+Start the server:
+
+npm run dev
+2. Setting up and running the frontend
+Change to the root folder of the project:
+
+cd ..
+Install the dependencies for the frontend:
+
+npm install
+Launch the frontend using Vite:
+
+bash
+npm run dev
+Go to http://localhost:3000 in your browser.
+
+3. How to work with the database
+All information about superheroes is stored in a PostgreSQL database. You can perform the following operations:
+
+Viewing superheroes: Getting all the superheroes that are stored in the database.
+Create a new superhero: Using the form on the frontend, you can add new superheroes.
+Edit a superhero: You can change the properties of existing superheroes.
+Upload images: You can upload and replace images for each superhero.
+Delete a superhero: Delete a superhero from the database.
+
+Translated with DeepL.com (free version)
