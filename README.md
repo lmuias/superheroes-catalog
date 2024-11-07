@@ -57,7 +57,6 @@ CREATE DATABASE hero_catalog;
 Install all the necessary tables and data. If you have a SQL dump with the database, you can load it with:
 
 psql -U postgres -d hero_catalog < full_backup.sql
-Create an .env file in the backend folder and add the parameters to connect to the database:
 
 Start the server:
 
@@ -71,7 +70,6 @@ Install the dependencies for the frontend:
 npm install
 Launch the frontend using Vite:
 
-bash
 npm run dev
 Go to http://localhost:3000 in your browser.
 
