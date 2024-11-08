@@ -1,11 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import style from './HeroDetailInfo.module.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { EditingForm } from '../EditingForm';
 import { useAppContext } from '../../AppContet';
 import { deleteImage, uploadImage, uploadMainImage } from '../../api/imagesApi';
 
-export const HeroDetailInfo = () => {
+export const HeroDetailInfo: React.FC = () => {
   const [isEditWindowOpen, setIsEditWindowOpen] = useState(false);
   const { hero_name } = useParams();
   const { heroes } = useAppContext();
