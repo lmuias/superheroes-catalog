@@ -2,9 +2,10 @@
 @use '../../styles/variables' as *;
 
 .section {
+  row-gap: 50px;
+
   @include page-grid;
 
-  row-gap: 50px;
 }
 
 .navigation,
@@ -179,16 +180,18 @@
 }
 
 .content {
+  row-gap: 30px;
+
   @include page-grid;
 
-  row-gap: 30px;
 }
 
 .block {
-  @include page-grid;
-
   grid-column: 1 / -1;
   row-gap: 20px;
+
+  @include page-grid;
+
 }
 
 .gallery,

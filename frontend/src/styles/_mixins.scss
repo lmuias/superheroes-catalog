@@ -1,5 +1,6 @@
 @use './variables' as *;
 
+
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
@@ -20,7 +21,6 @@
 
 @mixin page-grid {
   --columns: 2;
-
   display: grid;
   column-gap: $page-grid-gap-mob;
   grid-template-columns: repeat(var(--columns), 1fr);
@@ -31,7 +31,6 @@
 
   @include on-desktop {
     --columns: 12;
-
     column-gap: $page-grid-gap-desk;
   }
 }

@@ -2,9 +2,10 @@
 @use '../../styles/variables' as *;
 
 .container {
+  row-gap: 40px;
+
   @include page-grid;
 
-  row-gap: 40px;
 
   @include on-desktop {
     row-gap: 80px;
