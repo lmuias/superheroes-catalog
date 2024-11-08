@@ -52,9 +52,15 @@ export const HeroDetailInfo: React.FC = () => {
   };
 
   function getFilePath(url: string) {
-    const regex = /(?:http:\/\/localhost:\d+)(\/uploads\/images\/.*)$/;
-    const match = url.match(regex);
-    return match ? match[1] : null;
+    const basePath = '/uploads/images';
+  
+    const basePathIndex = url.indexOf(basePath);
+  
+    if (basePathIndex !== -1) {
+      return url.slice(basePathIndex); 
+    }
+  
+    return null;
   }
 
   const handleDeleteImage = async (imageUrl: string) => {
@@ -71,8 +77,6 @@ export const HeroDetailInfo: React.FC = () => {
         window.location.reload();
       }
     }
-
-    console.log(slicedUrl)
   };
 
   return (
