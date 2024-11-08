@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
-    origin: 'https://superheroes-catalog-2.onrender.com',
+    origin: process.env.FRONTEND_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })

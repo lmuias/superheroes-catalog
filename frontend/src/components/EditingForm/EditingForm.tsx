@@ -19,6 +19,7 @@ export const EditingForm: React.FC<Props> = ({ currentHero, isEditWindowOpen, se
   const [preDeleteModal, setPreDeleteModal] = useState(false);
   const { heroes, setHeroes } = useAppContext();
   const [isButtonLoading, setIsButtonLoading] = useState(false);
+  const [error, setError] = useState<string>('');
 
   const [heroState, setHeroState] = useState({
     id,
@@ -29,7 +30,25 @@ export const EditingForm: React.FC<Props> = ({ currentHero, isEditWindowOpen, se
     catch_phrase,
   });
 
-  const handleSubmitChanges = () => {
+  const validateFields = (): boolean => {
+    if (
+      !heroState.nickname.trim() ||
+      !heroState.real_name.trim() ||
+      !heroState.origin_description.trim() ||
+      !heroState.superpowers.trim() ||
+      !heroState.catch_phrase.trim()
+    ) {
+      setError('All fields are required and cannot be empty or just spaces.');
+      return false;
+    }
+    setError('');
+    return true;
+  };
+
+  const handleSubmitChanges = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validateFields()) return;
+
     setIsButtonLoading(true);
 
     if (creating) {
@@ -93,7 +112,7 @@ export const EditingForm: React.FC<Props> = ({ currentHero, isEditWindowOpen, se
           </svg>
         </button>
       </div>
-      <form className={style.form} onSubmit={handleSubmitChanges}>
+      <form className={style.form} onSubmit={(e) => handleSubmitChanges(e)}>
         <label className={style.label}>
           Nickname: 
           <input 
@@ -139,6 +158,8 @@ export const EditingForm: React.FC<Props> = ({ currentHero, isEditWindowOpen, se
             onChange={(e) => setHeroState({...heroState, catch_phrase: e.target.value})}
           />
         </label>
+  
+        {error && <p className={style.error}>{error}</p>} 
 
         {!isButtonLoading ? (
           <button type='submit' className={style.button}>{creating ? 'Create new hero?' : 'Confirm changes?'}</button>
