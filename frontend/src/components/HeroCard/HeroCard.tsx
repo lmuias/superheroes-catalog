@@ -10,7 +10,7 @@ interface Props {
 export const HeroCard: React.FC<Props> = ({ hero }) => {
   const { nickname, main_image, real_name } = hero;
 
-  const imageUrl = main_image ? `http://localhost:8080${main_image.replace(/{|}/g, '')}` : null;
+  const imageUrl = main_image ? import.meta.env.VITE_SERVER_URL + `${main_image.replace(/{|}/g, '')}` : null;
   
   return (
     <Link 
