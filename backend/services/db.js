@@ -2,8 +2,6 @@ import 'dotenv/config';
 import pkg from 'pg';
 const { Client } = pkg;
 
-console.log('DB Password:', process.env.DB_PASSWORD);
-
 export const client = new Client({
   host: process.env.DB_HOST,
   user:  process.env.DB_USER,
