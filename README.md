@@ -58,9 +58,22 @@ Install all the necessary tables and data. If you have a SQL dump with the datab
 
 psql -U postgres -d hero_catalog < full_backup.sql
 
+Configure the Environment Variables
+Create a .env file in the backend folder with the following content:
+
+DB_HOST=localhost
+DB_USER=postgres
+DB_PASSWORD=root
+DB_NAME=postgres
+DB_PORT=5432
+FRONTEND_URL=http://localhost:5173
+PORT=8080
+
 Start the server:
 
 npm run dev
+
+
 2. Setting up and running the frontend
 Change to the root folder of the project:
 
@@ -68,10 +81,14 @@ cd ..
 Install the dependencies for the frontend:
 
 npm install
-Launch the frontend using Vite:
 
+Create a .env file in the backend folder with the following content:
+
+VITE_SERVER_URL=http://localhost:8080
+
+Launch the frontend using Vite:
 npm run dev
-Go to http://localhost:3000 in your browser.
+Go to http://localhost:5173 in your browser.
 
 3. How to work with the database
 All information about superheroes is stored in a PostgreSQL database. You can perform the following operations:
@@ -81,3 +98,7 @@ Create a new superhero: Using the form on the frontend, you can add new superher
 Edit a superhero: You can change the properties of existing superheroes.
 Upload images: You can upload and replace images for each superhero.
 Delete a superhero: Delete a superhero from the database.
+
+This **README.md** file includes all the necessary instructions to set up both the frontend and backend environments, configure PostgreSQL, and get your project running.
+
+Let me know if you need any additional changes!
