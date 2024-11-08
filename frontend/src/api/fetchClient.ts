@@ -30,6 +30,8 @@
     }
   
     options.headers = headers;
+
+    console.log(BASE_URL + url);
   
     return wait(100)
       .then(() => {
