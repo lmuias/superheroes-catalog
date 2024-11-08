@@ -13,10 +13,10 @@ export const HeroDetailInfo: React.FC = () => {
   const { nickname, images, real_name, catch_phrase, superpowers, origin_description, main_image, id } = hero || {};
 
   const imagesUrl = images && Array.isArray(images)
-  ? images.map(someImg => `http://localhost:8080${someImg.replace(/{|}/g, '')}`)
+  ? images.map(someImg => import.meta.env.VITE_SERVER_URL + `${someImg.replace(/{|}/g, '')}`)
   : null;
 
-  const imageUrl = main_image ? `http://localhost:8080${main_image.replace(/{|}/g, '')}` : null;
+  const imageUrl = main_image ? import.meta.env.VITE_SERVER_URL + `${main_image.replace(/{|}/g, '')}` : null;
 
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {

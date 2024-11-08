@@ -1,4 +1,4 @@
-const BASIC_URL = `http://localhost:8080/heroes`
+const BASIC_URL = import.meta.env.VITE_SERVER_URL + '/heroes';
 
 export const uploadImage = async (heroId: string, file: File) => {
   const formData = new FormData();
